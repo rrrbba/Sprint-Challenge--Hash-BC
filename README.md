@@ -26,9 +26,23 @@ Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
+### The runtime complexity to access an array is o(1), meaning it's going to be the same time no matter how small or large the array is
+### The runtime complexity to add or remove from the front is o(n) because those behind it need to be shifted over
+### The runtime complexity to add to the back is o(1), however if the array is full then o(n) because you’ll have resize and re add them to a new array
+### The runtime complexity to remove from the back is o(1), unless a larger array is needed then o(n) because of copying over
+### O(n) is the worst case because you need to make a bigger array which means more allocating a bigger memory block and then copy over all the elements
+
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
  
+### A blockchain is structured and organized by the blocks in the chain consisting of the previous hash. A block should have an index, a timestamp, transactions, a proof, and the previous hash of the one that came before the current block. 
+
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+### A proof of work is simply a consensus system. It functions by using the sha256 and it checks for the proof with the most leading zeros. The number of leading zeros needed to pass is determined by those in charge of the chain. When the proof is determined valid the node hashes the previous block and adds it to the chain and ensures the previous hash listed on the block matches with actual previous block in the chain. All of these checks protects the blockchain from attacks, because if someone were to attempt to add to the blockchain forcefully, they would have to ensure their previous hash matches with the actual previous has but by doing so changes the previous hash which makes that one then incorrect. Also they would have to redo the entire chain fast enough before another block is forged through a valid proof or else the attempts to change it would be a waste because their hash is no longer valid. 
+
+
+
+
 
 ## Project Set Up
 
